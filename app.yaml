@@ -1,0 +1,33 @@
+application: qianxuz-byte1
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: .*
+  script: main.app
+
+- url: /js
+  static_dir: js
+  application_readable: true
+- url: /fonts
+  static_dir: fonts
+  application_readable: true
+- url: /css
+  static_dir: css
+  application_readable: true
+- url: /templates
+  static_dir: templates
+  application_readable: true
+
+# ... and further down after a bunch of comments
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: webapp2
+  version: "2.5.2"
